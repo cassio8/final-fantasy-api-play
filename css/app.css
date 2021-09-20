@@ -1,0 +1,336 @@
+[v-cloak] { display: none }
+
+body {
+	margin: 60px 0;
+	background-color: #0e0e0e;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, li, small, b, a,
+input {
+	font-family: 'Press Start 2P', cursive;
+}
+
+h2 {
+	color: #fff;
+}
+
+h6, ._h6 {
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 1170px;
+}
+
+.Cards .card {
+	margin-bottom: 2%;
+	padding: 20px;
+	border-radius: 10px;
+	background: #020024;
+	background: linear-gradient(0deg,#020024,#02009f 80%);
+	border: 2px solid #fff;
+	cursor: pointer;
+	transition: 300ms;
+}
+
+.Cards .card:hover {
+	transform: scale(1.05) rotate(3deg);
+}
+
+.Cards .card p {
+	margin: 0;
+	color: #fff;
+	font-size: 10px;
+}
+
+.Cards .card .imagem {
+	margin: 0 auto 20px;
+	height: 100px;
+}
+
+.Cards .card .imagem img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-height: 90px;
+	min-height: 90px;
+}
+
+.Cards .card .info h6 {
+	margin: 0 0 20px;
+	color: #fff;
+	text-align: center;
+}
+
+.Cards .card .info .list {
+	margin: 0;
+}
+
+.Cards .card .info .list li {
+	position: relative;
+	margin: 0 0 4px;
+	padding: 0 0 4px;
+	font-size: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.Cards .card .info .list b {
+	color: #26cac9;
+	float: left;
+}
+
+.Cards .card .info .list span {
+	display: block;
+	margin-left: auto;
+	color: #fff;
+	width: 180px;
+	text-align: right;
+}
+
+.Cards._games .card .imagem {
+	height: 150px;
+	background-color: #fff;
+}
+
+.Cards._games .card .imagem img {
+	max-height: 120px;
+	min-height: 120px;
+}
+
+.Cards._games .card h6 {
+	margin: 0 0 5px;
+}
+
+.Cards._games .card b {
+	display: block;
+	margin: 0;
+	color: #26cac9;
+	font-size: 10px;
+	text-align: center;
+}
+
+.tabs {
+	margin: 0 0 30px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.tabs .tab {
+	display: inline-block;
+	margin-right: 20px;
+	color: #fff;
+}
+
+.tabs .tab._active {
+	color: #26cac9;
+}
+
+.Popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	z-index: 100;
+}
+
+.Popup .content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	width: 800px;
+	color: #fff;
+	font-size: 10px;
+	border-radius: 10px;
+	background: #020024;
+	background: linear-gradient(0deg,#020024,#02009f 80%);
+	border: 2px solid #fff;
+}
+
+.Popup .content .close {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	color: #fff;
+	font-size: 18px;
+}
+
+.Popup .content .close:hover {
+	opacity: 0.8;
+}
+
+.Popup .content img {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	max-width: 100px;
+	min-width: 100px;
+}
+
+.Popup .content .right {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	width: 630px;
+}
+
+.Popup .content .right._w100 {
+	width: 100%;
+}
+
+.Popup .content .right li {
+	margin: 0 0 8px;
+}
+
+.Popup .content b {
+	display: inline-block;
+	vertical-align: top;
+	color: #26cac9;
+}
+
+.Popup .content p {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+}
+
+.scroll {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	background: #02009f;
+	border-radius: 50%;
+}
+
+.scroll:hover {
+	color: #fff;
+	background-color: #020083;
+}
+
+.scroll i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+input[type=text] {
+	margin: 0 0 40px;
+	color: #fff;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 0;
+}
+
+input::placeholder {
+	color: #fff;
+}
+
+.loading {
+	display: block;
+	color: #fff;
+	text-align: center;
+	animation: flickerAnimation 1s infinite;
+}
+
+@keyframes flickerAnimation {
+	0%   { opacity:1; }
+	50%  { opacity:0.4; }
+	100% { opacity:1; }
+}
+
+@media only screen and (max-width: 1200px) {
+	.container {
+		width: 970px;
+	}
+
+	h2, ._h2 {
+		font-size: 26px;
+	}
+
+	.Row._gutters > ._col-3 {
+		width: calc(33.33333% - 2%);
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.container {
+		width: 740px;
+	}
+
+	.Row._gutters > ._col-3 {
+		width: calc(50% - 2%);
+	}
+
+	.Popup .content {
+		width: 650px;
+	}
+
+	.Popup .content img {
+		display: block;
+		margin: 0 0 20px;
+	}
+
+	.Popup .content .right {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.container {
+		width: 90%;
+	}
+
+	h2, ._h2 {
+		font-size: 20px;
+		line-height: 30px;
+		text-align: center;
+	}
+
+	.Row._gutters > ._col-3 {
+		margin: 0 auto 30px;
+		width: 280px;
+	}
+
+	.Cards._games .card .imagem {
+		height: 120px;
+	}
+
+	.Cards._games .card .imagem img {
+		max-height: 70px;
+		min-height: 70px;
+	}
+
+	.tabs .tab {
+		margin-right: 15px;
+		font-size: 14px;
+	}
+
+	.Popup {
+		overflow: scroll;
+	}
+
+	.Popup .content {
+		position: relative;
+	    top: 0;
+	    left: 0;
+	    transform: none;
+	    margin: 0 auto;
+	    width: 100%;
+	}
+}

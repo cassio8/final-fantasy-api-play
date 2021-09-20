@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Final Fantasy API</title>
+	<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/proxy/q_2ibeskIe4Eh4hwalBaoskpUibJAp7nOd4_8NuwkLYptW35StqLkbw3mw1au91LxQeGVIStBkm1O3O1bttinN7_VoEYpR5MU46V3f9PoLHGcg"/>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/fontello/css/fontello.css">
+	<link rel="stylesheet" href="css/monalisa.min.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	
+	<div id="app" v-cloak>
+		<div class="container">
+			<h2>Final Fantasy API</h2>
+
+			<div class="tabs">
+				<a href="#" :class="(tab == 0) ? 'tab _active' : 'tab'" v-on:click.prevent="tab = 0">Characters</a>
+				<a href="#" :class="(tab == 1) ? 'tab _active' : 'tab'" v-on:click.prevent="tab = 1">Games</a>
+			</div>
+
+			<div class="tab-item" v-show="tab == 0">
+				<input type="text" name="search" class="search" placeholder="Search" v-model="searchQuery">
+
+				<span class="loading" v-show="loading">Loading...</span>
+
+				<div class="Cards Row _gutters list">
+					<div class="card _hover col _col-3" v-for="card in resultQuery" v-on:click.prevent="loadCharacter(card.id)">
+						<div class="imagem">
+							<img :src="card.pictures[0].url" v-if="card.pictures[0]">
+						</div>
+						<div class="info">
+							<h6 class="name">{{ card.name }}</h6>
+						
+							<ul class="list _unstyled">
+								<li><b>Gender:</b> <span>{{ card.gender }}</span></li>
+								<li><b>Race:</b> <span>{{ card.race }}</span></li>
+								<li><b>Age:</b> <span>{{ card.age }}</span></li>
+								<li><b>Job:</b> <span>{{ card.job }}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-item" v-show="tab == 1">
+				<div class="Cards Row _gutters _games">
+					<div class="card col _col-6" v-for="card in games" v-on:click.prevent="loadGame(card.gameId)">
+						<div class="imagem">
+							<img :src="card.picture" v-if="card.picture" @error="$event.target.src = ''">
+						</div>
+						<div class="info">
+							<h6>{{ card.title }}</h6>
+							<b>{{ card.platform }}</b>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="Popup" id="popup" v-show="popup == true"></div>
+
+		<a href="#" class="scroll"><i class="icon-up"></i></a>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
